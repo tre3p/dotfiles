@@ -26,6 +26,13 @@ function reduce_dock_appearing_time() {
     # To revert: defaults delete com.apple.dock autohide-delay; killall Dock
 }
 
+function change_default_shell_to_bash() {
+    chsh -s $(which bash)
+
+    # MacOS-specific due to zsh is default shell in MacOS
+    echo "export BASH_SILENCE_DEPRECATION_WARNING=1" >> ~/.bash_profile
+}
+
 install_brew
 install_karabiner
 copy_karabiner_configs
