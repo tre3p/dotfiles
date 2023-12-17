@@ -13,13 +13,17 @@ function copy_karabiner_configs() {
     cp karabiner/assets/complex_modifications/cmd_change_layout.json ~/.config/karabiner/assets/complex_modifications/
 }
 
+function install_iterm2() {
+    brew install --cask iterm2
+}
+
+function install_rectangle() {
+    brew install --cask rectangle
+}
+
 function reduce_dock_appearing_time() {
     defaults write com.apple.dock autohide-delay -float 0; killall Dock
     # To revert: defaults delete com.apple.dock autohide-delay; killall Dock
-}
-
-function install_iterm2() {
-    brew install --cask iterm2
 }
 
 install_brew
