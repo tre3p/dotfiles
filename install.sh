@@ -9,9 +9,10 @@ function install_sdkman() {
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 }
 
-change_PS1
+# Create ~/.bash_profile if not exists
+touch ~/.bash_profile
 
-#if [[ $(uname) == 'Darwin' ]]; then
-#    sh install_macos.sh
+if [[ $(uname) == 'Darwin' ]]; then
+    sh install_macos.sh
 #elif [[ $(uname) == 'Linux' ]]; then    
-#fi
+fi
