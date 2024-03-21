@@ -9,9 +9,6 @@ function install_sdkman() {
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 }
 
-# Create ~/.bash_profile if not exists
-touch ~/.bash_profile
-
 if [[ $(uname) == 'Darwin' ]]; then
     sh install_macos.sh
 #elif [[ $(uname) == 'Linux' ]]; then    
