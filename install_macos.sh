@@ -13,6 +13,16 @@ function install_oh_my_zsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
+function change_default_theme() {
+    # NOTE: backuped .zshrc will be saved in ~/.zshrc.bak
+    sed -i.bak $'/^ZSH_THEME=/c\\\nZSH_THEME="afowler"\n' ~/.zshrc
+}
+
+function replace_theme_config() {
+    truncate -s 0 ~/.oh-my-zsh/themes/afowler.zsh-theme
+    cat theme/afowler.theme.cfg >> ~/.oh-my-zsh/themes/afowler.zsh-theme
+}
+
 function copy_karabiner_configs() {
     cp karabiner/karabiner.json ~/.config/karabiner/
 }
@@ -31,3 +41,5 @@ install_karabiner
 install_oh_my_zsh
 copy_karabiner_configs
 reduce_dock_appearing_time
+change_default_theme
+replace_theme_config
