@@ -4,10 +4,6 @@ function install_brew() {
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
-function install_karabiner() {
-    brew install --cask karabiner-elements
-}
-
 function install_oh_my_zsh() {
     # theme: afowler
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -23,10 +19,6 @@ function replace_theme_config() {
     cat theme/afowler.theme.cfg >> ~/.oh-my-zsh/themes/afowler.zsh-theme
 }
 
-function copy_karabiner_configs() {
-    cp karabiner/karabiner.json ~/.config/karabiner/
-}
-
 function install_rectangle() {
     brew install --cask rectangle
 }
@@ -37,9 +29,7 @@ function reduce_dock_appearing_time() {
 }
 
 install_brew
-install_karabiner
 install_oh_my_zsh
-copy_karabiner_configs
 reduce_dock_appearing_time
 change_default_theme
 replace_theme_config
