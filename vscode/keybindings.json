@@ -40,5 +40,13 @@
     {
         "key": "cmd+shift+l",
         "command": "editor.action.formatDocument"
+    },
+    {
+        "key": "cmd+d",
+        "command": "editor.action.copyLinesDownAction"
+    },
+    {
+        "key": "cmd+r",
+        "command": "editor.action.rename"
     }
 ]
